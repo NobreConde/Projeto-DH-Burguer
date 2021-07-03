@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- importando configurações HEAD e BootstrapCDN -->
+    <%- include('./partials/head') %>
+    <!-- importando a font principal -->
+    <%- include('./partials/mainFont') %>
+
+    <link rel="stylesheet" text="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" text="text/css" href="/css/menu.css" />
+    <link rel="stylesheet" href="/css/menuHamburguer.css" />
+    <link rel="stylesheet" href="/css/medias.css" />
+
+    <title>Menu</title>
+  </head>
+  <body>
+    <!-- importando o header da pasta partials -->
+    <%- include('./partials/header') %>
+
+    <img class="fundo-img" src="/img/menu2.png" alt="" />
+    <div class="wrap">
+      <div class="title">
+        <h1 class="menu-title">M e n u</h1>
+      </div>
+    </div>
+
+    <main>
+      <% for (let burguerSingular of produtos) {%>
+      <form method="POST" class="form">
+        <input
+          type="text"
+          name="produtoId"
+          value="<%= burguerSingular.id %>"
+          hidden
+        />
+        <span class="cardapio">
+          <span class="topCard">
+            <img
+              width="180"
+              height="110"
+              src="/posts/<%= burguerSingular.imagem %>"
+              class="hamburguerImg"
+              alt="hamburguer"
+            />
+            <h2 name="nome"><%= burguerSingular.nome %></h2>
+            <p><%= burguerSingular.descricao %></p>
+          </span>
+          <span class="bottomCard">
+            <h1>
+              <%=burguerSingular.preco.toLocaleString('pt-br', {
+              minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })
+              %>
+            </h1>
+            <button class="addButton" type="submit">Adicionar</button>
+          </span>
+        </span>
+      </form>
+      <% } %>
+    </main>
+
+    <!-- importando o footer da pasta partials -->
+    <%- include('./partials/footer') %>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript" src="/javascripts/menu.js"></script>
+  </body>
+</html>

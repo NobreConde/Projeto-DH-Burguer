@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <!-- importando a font principal -->
+    <%- include('./partials/mainFont') %> 
+    <!-- importando configurações HEAD e BootstrapCDN -->
+    <%- include('./partials/head') %>  
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/menuHamburguer.css">
+    <link rel="stylesheet" href="/css/medias.css">
+  
+    
+    <title>Home</title>
+</head>
+<body>
+    <div id="header" class="header">
+        <div class="leftSide">
+          <a href="/"><img src="/img/logo3.png" class="logo" alt="logo" /></a>
+        </div>
+        <div class="rightSide">
+          <div id="mHamburguer">
+            <input id="menu-hamburguer" type="checkbox" />
+      
+            <label for="menu-hamburguer">
+              <div class="menu">
+                <span class="hamburguer"></span>
+              </div>
+            </label>
+      
+            <ul>
+              <li class="nav-item">
+                <a class="nav-link1" href="/#sobre">DH Burger</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link1" href="/#formBx">Contato</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link1" href="/menu">Menu</a>
+              </li>
+
+              <li class="nav-item">
+                <% if(user){ %>
+                  <a class="nav-link1"><i class="fas fa-user-circle"></i> Oi <%= user.nome %> </a>
+                  <% } else { %>  
+                <a class="nav-link1" href="/users/login">Login</a>
+                <%}%>  
+              </li>
+              <% if(user){%>
+                <% if(user.admin == 0) { %>
+                  <li class="nav-item">
+                    <a class="nav-link1" href="/cadastro"><i class="fas fa-plus-square"></i>
+                      Add</a>
+                  </li>
+                <% } %> 
+                <% } %>
+
+              <li class="nav-item">
+                <a class="nav-link1" href="/carrinho"><i class='fas fa-shopping-cart' style='font-size:22px;'></i></a>
+              </li>
+            </ul>
+          </div>
+      
+          <div id="mNormal">
+            <ul>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#sobre">DH Burger</a>
+              </li>
+      
+              <li class="nav-item">
+                <a class="nav-link" href="#formBx">Contato</a>
+              </li>
+      
+              <li class="nav-item">
+                <a class="nav-link" href="/menu">Menu</a>
+              </li>
+
+              <li class="nav-item">
+                <% if(user){ %>
+                  <a class="nav-link"><i class="fas fa-user-circle"></i> <%= user.nome %> </a>
+                  <% } else { %>  
+                <a class="nav-link" href="/users/login"> <i class="fas fa-user"></i> Login </a>
+                <%}%>  
+              </li>
+              <% if(user){%>
+                <% if(user.admin == 0) { %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/cadastro"><i class="fas fa-plus-square"></i>
+                      Add</a>
+                  </li>
+                <% } %> 
+                <% } %>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="traço">|</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/carrinho"><i class='fas fa-shopping-cart' style='font-size:22px;'></i></a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+
+    <main>
+      <!-- carrossel -->
+        <div class="contencao">
+            <div id="imageBg"></div>
+            <div id="imageBg2"></div>
+            <div id="imageBg3"></div>
+        
+            <div class="anterior" onclick="anterior()">&#171;</div>
+            <div class="proximo" onclick="proximo()">&#187;</div>
+        </div>
+        
+<!-- Zona Burguer -->
+<div id="z-fundo">
+  <img class="zonaImg" src="/img/zonab.png" alt="zona-burguer">
+   <div class="zona-t">
+    <div class="p1">Zona</div>
+     <div class="p2">Burger</div>
+   </div>
+</div> 
+<!--//Zona Burguer -->
+
+<!-- sobre DH-->
+<div class="borda"></div>
+<div class="container" id="sobre">
+  <div class="left-col">
+      <img src="/img/logo4.png" alt="logo" />
+  </div>
+  <div class="right-col">
+      <div class="info">
+          <h2 class="DH Burguer">DH Burger</h2>
+          <p>Nossa missão é básica: oferecer ao cliente um produto muito bem feito. Para isso, a base de tudo, nossa matéria prima é a melhor e chega na mesa fresquinha. Nosso hambúrguer tem nosso próprio sabor. Feito por quem gosta de hambúrguer para quem gosta de hambúrguer. Assim nos entendemos. Básico nas combinações de acompanhamento. Oferecemos o que realmente importa: um hambúrguer suculento e saboroso. Batatas fritas sequinhas e milkshakes deliciosos, no copão!</p>
+          <p>Nosso hambúrguer tem sabor! Diferentemente de todas as hamburguerias, nosso hambúrguer vem da brasa de um grelhador ultra moderno. Selado enquanto mantém toda a sua suculência.</p>
+      </div>
+  </div>
+</div>
+<!-- //sobre DH -->
+
+<!-- sobre DH2 -->
+<div class="containerDH">
+  <div class="esquerda-col">
+      <div class="info">
+          <h3>Unidade São Paulo</h3>
+          <p>São Paulo | Capital | SP</p>
+          <h3>Funcionamento:</h3>
+          <p><strong>Ter-Qui:</strong> 12h-15h e 19h-23h</p>
+          <p><strong>Sáb-Dom:</strong> 12h-23h</p>
+      </div>
+  </div>
+
+  <div class="direita-col">
+      <img src="/img/dhburguer.png" alt="dhburguer"/>
+  </div>
+</div>
+<!-- //sobre DH2 -->
+
+<!-- imagem de fundo -->
+<div class="fundo">
+  <img src="/img/fundoDh.png" alt="">
+</div>
+<!--//imagem de fundo -->
+
+<!-- Contato -->
+        <div class="container">
+          <div class="formBx" id="formBx" >
+              <form onsubmit="event.preventDefault(); alert_contato()" action="https://api.staticforms.xyz/submit" method="post" id="contato_home">
+                <input type="hidden" name="accessKey" value="19d0adba-6d15-4f35-a92c-6b2041448fec">
+                 <input type="hidden" name="redirectTo" value="http://localhost:3000/#formBx?sucess">
+
+                  <h2>Contato</h2>
+                  <div class="inputBox">
+                      <input type="text" name="name" required>
+                      <span>Nome</span>
+                  </div>
+                  <div class="inputBox">
+                     <input type="email" name="email" required>
+                     <span>Email</span>
+                 </div>
+                 <div class="inputBox">
+                     <textarea name="message" required></textarea>
+                     <span>Escreva sua mensagem aqui...</span>
+                 </div>
+                 <div class="inputBox">
+                     <input type="submit" name="" value="Enviar" id="enviar">
+                 </div>
+              </form>
+          </div>
+<!--//Contato -->
+
+<!-- //Conecte-se -->
+        <div class="connect">
+          <div class="txt">
+            <p class="txt1">Conecte-se conosco em suas redes</p>
+            <p class="txt2">sociais favoritas</p>
+          </div>
+        </div>
+<!-- //Conecte-se -->
+    </main>
+
+<!-- importando o footer da pasta partials -->
+<%- include('./partials/footer') %> 
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- importando configurações HEAD e BootstrapCDN -->
+    <%- include('../partials/head') %>
+    <!-- importando a font principal -->
+    <%- include('../partials/mainFont') %>
+    <link rel="stylesheet" text="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" text="text/css" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/menuHamburguer.css" />
+    <link rel="stylesheet" href="/css/medias.css" />
+
+    <title>Login</title>
+  </head>
+  <body>
+<!--  header   -->
+    <div id="header" class="header">
+  <div class="leftSide">
+    <a href="/"><img src="/img/logo3.png" class="logo" alt="logo" /></a>
+  </div>
+  <div class="rightSide">
+    <div id="mHamburguer">
+      <input id="menu-hamburguer" type="checkbox" />
+
+      <label for="menu-hamburguer">
+        <div class="menu">
+          <span class="hamburguer"></span>
+        </div>
+      </label>
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link1" href="/">DH Burger</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link1" href="/">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link1" href="/menu">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link1" href="/users/login">
+            <i class="fas fa-user"></i> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link1" href="/carrinho">
+            <i class="fas fa-shopping-cart" style="font-size: 22px"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="mNormal">
+      
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link" href="/">DH Burger</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/menu">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/login"
+            ><i class="fas fa-user"></i> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="traço">|</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/carrinho"
+            ><i class="fas fa-shopping-cart" style="font-size: 22px"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--//header   -->
+
+    <section>
+      <div class="container">
+        <div class="user siginBx">
+          <div class="imgBx"><img src="/img/login.jpg" /></div>
+          <div class="formBx">
+            <form method="POST">
+              <h2>Fazer login</h2>
+              <% if (typeof error == 'undefined' && !user) {%> <% } else { %>
+              <i id="exclamation" class="fa fa-exclamation-circle"></i>
+              <span class="span">Usuário ou senha inválida!</span>
+              <% } %> <input class="<%= typeof error == 'undefined'? "" :
+              "inputError"%>" type="text" placeholder="Email" name="email"
+              id="email" required/> <input class="<%= typeof error ==
+              'undefined'? "" : "inputError"%>" type="password"
+              placeholder="Password" name="password" required/>
+              <input type="submit" value="Login" id="login" />
+              <p class="signup">
+                Não tem uma conta?
+                <a href="/users/registro" id="cadastro" onclick="toggleForm()">
+                  Cadastre-se</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <!-- <script type="text/javascript" src="/javascripts/index.js"></script> -->
+
+  <script type="text/javascript" src="/javascripts/login.js"></script>
+</html>
