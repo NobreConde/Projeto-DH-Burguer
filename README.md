@@ -1,14 +1,22 @@
 # Projeto-DH-Burguer
 Projeto desenvolvido na conclusão de curso na Digital House
-Front-End
-Instalar
 
+## Front-End
+
+### Instalar
+
+```
 npm install
+```
 
-Rodar o projeto
+### Rodar o projeto
 
+```
 npm start
+```
 
-Porta
+### Porta
 
+```
 http://localhost:3000/
+```
