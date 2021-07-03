@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  /* background-color: #e7e7e7; */
+}
+
+.shopping-cart {
+  box-shadow: -3px 1px 13px -2px rgba(0, 0, 0, 0.73);
+  border-radius: 5px;
+  border-bottom: 70px;
+  padding: 0 55px;
+  display: flex;
+  margin: 80px;
+  background-color: #fff;
+  align-self: center;
+  flex-direction: column;
+}
+.title {
+  display: flex;
+  padding: 10px 25px 5px 0;
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: default;
+}
+.title img {
+  margin-right: 15px;
+  width: 45px;
+  height: 45px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+}
+
+.minus-btn {
+  border: none;
+  background-color: transparent;
+}
+.plus-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.quantity > input {
+  margin: 0 5px;
+  padding: 0;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  cursor: default;
+  outline: none;
+}
+.confirm {
+  display: flex;
+  justify-content: flex-end;
+  padding: 25px 0;
+}
+
+.continue-btn > a,
+.continue-btn,
+.confirm-btn {
+  height: 40px;
+  background: rgb(255, 165, 0);
+  opacity: 0.85;
+  border: none;
+  color: #111;
+  padding: 10px 15px;
+  margin-left: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  /* text-transform: uppercase; */
+  cursor: pointer;
+  border-radius: 5px;
+  border-bottom: 70px;
+  letter-spacing: 1px;
+  list-style: none;
+  text-decoration: none;
+}
+.continue-btn > a {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.continue-btn:hover > a,
+.confirm-btn:hover  {
+  opacity: 1;
+  color: #fff;
+}
+
+.continue-btn:hover   {
+  opacity: 1;
+}
+
+img {
+  background: none;
+}
+
+.description {
+  width: 180px;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+
+.description > span {
+  margin: 10px 0;
+  color: black;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.total-price {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 18px;
+}
+
+.buttom-delete > img {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.image {
+  cursor: pointer;
+}
+
+.total-price > input {
+  margin: 0 5px;
+  padding: 0;
+  font-size: 20px;
+  width: 45px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  cursor: default;
+  outline: none;
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.s {
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+.s:hover {
+  opacity: 1;
+}
+
+.x {
+  opacity: 0.85;
+  border-radius: 5px;
+}
+
+.x:hover {
+  opacity: 1;
+}
+
+.shopping-cart#blur.active {
+  filter: blur(20px);
+}
+
+body.swal2-shown > [aria-hidden="true"] {
+  filter: blur(10px);
+}
+
+.allItens {
+  display: flex;
+  justify-content: space-between;
+}
+.cupom {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+.cupom-2 {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+}
+
+.cupom-2 > span {
+  display: flex;
+  padding: 10px 15px;
+  margin-right: 5px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  border-color: #555;
+  opacity: 0.85;
+}
+
+.cupom-2 > button {
+  background: rgb(255, 165, 0);
+  opacity: 0.85;
+  border: none;
+  color: #111;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  border-bottom: 5px;
+  letter-spacing: 1px;
+}
+.allItens {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.allItens .total {
+  flex-direction: row-reverse;
+  font-size: 20px;
+}
+
+.fa-check,
+.fa-sad-cry {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+.obrigado {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.fa-times {
+  font-size: 80px;
+  margin: 20px 30px;
+}
+
+
+@media (max-width: 950px) {
+  .shopping-cart,
+  .item {
+    width: 100vh;
+  }
+}
