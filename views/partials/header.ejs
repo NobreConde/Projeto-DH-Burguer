@@ -1,0 +1,96 @@
+<div id="header" class="header">
+  <div class="leftSide">
+    <a href="/"><img src="/img/logo3.png" class="logo" alt="logo" /></a>
+  </div>
+  <div class="rightSide">
+    <div id="mHamburguer">
+      <input id="menu-hamburguer" type="checkbox" />
+
+      <label for="menu-hamburguer">
+        <div class="menu">
+          <span class="hamburguer"></span>
+        </div>
+      </label>
+
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link1" href="/">DH Burger</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link1" href="/">Contato</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link1" href="/menu">Menu</a>
+        </li>
+
+        <li class="nav-item">
+          <% if(user){ %>
+          <a class="nav-link1"
+            ><i class="fas fa-user-circle"></i> <%= user.nome %>
+          </a>
+          <% } else { %>
+          <a class="nav-link1" href="/users/login"
+            ><i class="fas fa-user"></i> Login</a
+          >
+          <%}%>
+        </li>
+        <% if(user){%> <% if(user.admin == 0) { %>
+        <li class="nav-item">
+          <a class="nav-link1" href="/cadastro"
+            ><i class="fas fa-plus-square"></i> Add</a
+          >
+        </li>
+        <% } %> <% } %>
+        <li class="nav-item">
+          <a class="nav-link1" href="/carrinho"
+            ><i class="fas fa-shopping-cart" style="font-size: 22px"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="mNormal">
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link" href="/">DH Burger</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Contato</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/menu">Menu</a>
+        </li>
+
+        <li class="nav-item">
+          <% if(user){ %>
+          <a class="nav-link"
+            ><i class="fas fa-user-circle"></i> <%= user.nome %>
+          </a>
+          <% } else { %>
+          <a class="nav-link" href="/users/login"
+            ><i class="fas fa-user"></i> Login</a
+          >
+          <%}%>
+        </li>
+        <% if(user){%> <% if(user.admin == 0) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/cadastro"
+            ><i class="fas fa-plus-square"></i> Add</a
+          >
+        </li>
+        <% } %> <% } %>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="traço">|</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/carrinho"
+            ><i class="fas fa-shopping-cart" style="font-size: 22px"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

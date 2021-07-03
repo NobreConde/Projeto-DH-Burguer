@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- importando configurações HEAD e BootstrapCDN -->
+    <%- include('./partials/head') %>
+    <!-- importando a font principal -->
+    <%- include('./partials/mainFont') %>
+
+    <link rel="stylesheet" text="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" text="text/css" href="/css/cadastro.css" />
+    <link rel="stylesheet" href="/css/menuHamburguer.css" />
+    <link rel="stylesheet" href="/css/medias.css" />
+
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <!-- importando o header da pasta partials -->
+    <%- include('./partials/header') %>
+
+    <!-- formulario de cadastro -->
+
+    <form
+      id="form-produto"
+      method="POST"
+      enctype="multipart/form-data"
+      action="/cadastro"
+    >
+      <label>
+        Nome
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Digite o nome do produto"
+        />
+      </label>
+      <label>
+        descricao
+        <input
+          type="text"
+          id="descricao"
+          name="descricao"
+          placeholder="descricao (separados por vírgula)"
+        />
+      </label>
+      <label>
+        Preço
+        <input
+          type="number"
+          id="preco"
+          name="preco"
+          step="0.01"
+          placeholder="Digite o preço da pizza"
+        />
+      </label>
+      <label>
+        Foto
+        <img src="/img/noImage.png" />
+        <div>Selecione uma nova imagem</div>
+        <input type="file" name="img" id="img" required />
+      </label>
+      <button type="submit">Salvar</button>
+    </form>
+    <!-- //formulario de cadastro -->
+
+  
+  </body>
+</html>
